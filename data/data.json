@@ -1,0 +1,542 @@
+[
+    {
+    "plantName": "Asiasalat",
+    "plantType": 3,
+    "propagationIndoor": [],
+    "propagationOutdoor": [4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16],
+    "harvest": [0, 1, 2, 3, 4, 5, 6, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23],
+    "harvestYear": 1,
+    "perennial": false
+    },
+    {
+    "plantName": "Aubergine",
+    "plantType": 1,
+    "propagationIndoor": [4, 5, 6, 7, 8, 9],
+    "propagationOutdoor": [9, 10, 11],
+    "harvest": [13, 14, 15, 16],
+    "harvestYear": 1,
+    "perennial": false
+    },
+    {
+    "plantName": "Basilikum",
+    "plantType": 2,
+    "propagationIndoor": [6, 7],
+    "propagationOutdoor": [8, 9],
+    "harvest": [10, 11, 12, 13, 14, 15, 16],
+    "harvestYear": 1,
+    "perennial": false
+    },
+    {
+    "plantName": "Bärlauch",
+    "plantType": 2,
+    "propagationIndoor": [],
+    "propagationOutdoor": [0, 1, 2, 3, 4, 5, 18, 19, 20, 21, 22, 23],
+    "harvest": [4, 5, 6, 7, 8, 9],
+    "harvestYear": 1,
+    "perennial": true
+    },
+    {
+    "plantName": "Blumenkohl",
+    "plantType": 1,
+    "propagationIndoor": [3, 4, 5, 6, 7],
+    "propagationOutdoor": [6, 7, 8, 9, 10, 11, 12, 13],
+    "harvest": [11, 12, 13, 14, 15, 16, 17, 18, 19],
+    "harvestYear": 1,
+    "perennial": false
+    },
+    {
+    "plantName": "Bohnenkraut",
+    "plantType": 2,
+    "propagationIndoor": [],
+    "propagationOutdoor": [3, 4, 5, 6, 7, 8, 9, 10],
+    "harvest": [10, 11, 12, 13, 14, 15, 16],
+    "harvestYear": 1,
+    "perennial": false
+    },
+    {
+    "plantName": "Brokkoli",
+    "plantType": 1,
+    "propagationIndoor": [3, 4, 5, 6, 7],
+    "propagationOutdoor": [9, 10, 11],
+    "harvest": [12, 13, 14, 15, 16, 17, 18, 19],
+    "harvestYear": 1,
+    "perennial": false
+    },
+    {
+    "plantName": "Buschbohnen",
+    "plantType": 1,
+    "propagationIndoor": [],
+    "propagationOutdoor": [9, 10, 11, 12],
+    "harvest": [11, 12, 13, 14, 15, 16, 17, 18],
+    "harvestYear": 1,
+    "perennial": false
+    },
+    {
+    "plantName": "Dill",
+    "plantType": 2,
+    "propagationIndoor": [],
+    "propagationOutdoor": [3, 4, 5, 6, 7, 8, 9, 10, 11, 12],
+    "harvest": [9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19],
+    "harvestYear": 1,
+    "perennial": false
+    },
+    {
+    "plantName": "Eisbergsalat",
+    "plantType": 3,
+    "propagationIndoor": [2, 3, 4, 5, 6, 7],
+    "propagationOutdoor": [6, 7, 8, 9, 10, 11, 12, 13, 14],
+    "harvest": [10, 11, 12, 13, 14, 15, 16, 17, 18, 19],
+    "harvestYear": 1,
+    "perennial": false
+    },
+    {
+    "plantName": "Endivien",
+    "plantType": 3,
+    "propagationIndoor": [2, 3, 4, 5, 6, 7, 8, 9, 10],
+    "propagationOutdoor": [9, 10, 11, 12],
+    "harvest": [10, 11, 12, 13, 14, 15, 16, 17, 18, 19],
+    "harvestYear": 1,
+    "perennial": false
+    },
+    {
+    "plantName": "Estragon",
+    "plantType": 2,
+    "propagationIndoor": [4, 5],
+    "propagationOutdoor": [8, 9],
+    "harvest": [14, 15, 16, 17, 18, 19],
+    "harvestYear": 1,
+    "perennial": true
+    },
+    {
+    "plantName": "Feldsalat",
+    "plantType": 3,
+    "propagationIndoor": [],
+    "propagationOutdoor": [3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18],
+    "harvest": [4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21],
+    "harvestYear": 1,
+    "perennial": false
+    },
+    {
+    "plantName": "Fenchel",
+    "plantType": 1,
+    "propagationIndoor": [3, 4, 5, 6],
+    "propagationOutdoor": [7, 8, 9, 10, 11, 12],
+    "harvest": [10, 11 ,12, 13, 14, 15, 16, 17, 18, 19],
+    "harvestYear": 1,
+    "perennial": false
+    },
+    {
+    "plantName": "Frühlingszwiebel",
+    "plantType": 1,
+    "propagationIndoor": [2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12],
+    "propagationOutdoor": [4, 5, 6, 7, 8, 9, 10, 11, 12],
+    "harvest": [10, 11, 12, 13, 14, 15, 16, 17, 18, 19],
+    "harvestYear": 1,
+    "perennial": false
+    },
+    {
+    "plantName": "Gartenerbsen",
+    "plantType": 1,
+    "propagationIndoor": [],
+    "propagationOutdoor": [5, 6],
+    "harvest": [11, 12, 13, 14],
+    "harvestYear": 1,
+    "perennial": false
+    },
+    {
+    "plantName": "Grünkohl",
+    "plantType": 1,
+    "propagationIndoor": [8, 9, 10],
+    "propagationOutdoor": [10, 11, 12],
+    "harvest": [0, 1, 18, 19, 20, 21, 22, 23],
+    "harvestYear": 1,
+    "perennial": false
+    },
+    {
+    "plantName": "Kapuzinerkresse",
+    "plantType": 2,
+    "propagationIndoor": [4, 5, 6, 7, 8, 9],
+    "propagationOutdoor": [9, 10, 11],
+    "harvest": [11, 12, 13, 14, 15, 16, 17, 18, 19, 20],
+    "harvestYear": 1,
+    "perennial": false
+    },
+    {
+    "plantName": "Karotten",
+    "plantType": 1,
+    "propagationIndoor": [],
+    "propagationOutdoor": [4, 5, 6, 7, 8, 9, 10, 11, 12],
+    "harvest": [10, 11, 12, 13, 14, 15, 16, 17, 18, 19],
+    "harvestYear": 1,
+    "perennial": false
+    },
+    {
+    "plantName": "Kartoffeln",
+    "plantType": 1,
+    "propagationIndoor": [1, 2, 3, 4, 5],
+    "propagationOutdoor": [6, 7, 8, 9, 10],
+    "harvest": [10, 11, 12, 13, 14, 15, 16, 17, 18, 19],
+    "harvestYear": 1,
+    "perennial": false
+    },
+    {
+    "plantName": "Kerbel",
+    "plantType": 2,
+    "propagationIndoor": [],
+    "propagationOutdoor": [3, 4, 5, 6, 7, 8],
+    "harvest": [7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18],
+    "harvestYear": 1,
+    "perennial": false
+    },
+    {
+    "plantName": "Knoblauch",
+    "plantType": 1,
+    "propagationIndoor": [],
+    "propagationOutdoor": [3, 4, 5, 6, 16, 17, 18, 19],
+    "harvest": [12, 13, 14, 15, 16, 17, 18],
+    "harvestYear": 1,
+    "perennial": false
+    },
+    {
+    "plantName": "Knollensellerie",
+    "plantType": 1,
+    "propagationIndoor": [3, 4, 5],
+    "propagationOutdoor": [],
+    "harvest": [16, 17, 18, 19, 20, 21],
+    "harvestYear": 1,
+    "perennial": false
+    },
+    {
+    "plantName": "Kohlrabi",
+    "plantType": 1,
+    "propagationIndoor": [4, 5, 6, 7, 8, 9, 10, 11, 12, 13],
+    "propagationOutdoor": [6, 7, 8, 9, 10, 11, 12, 13, 14, 15],
+    "harvest": [8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20],
+    "harvestYear": 1,
+    "perennial": false
+    },
+    {
+    "plantName": "Kopfsalat",
+    "plantType": 3,
+    "propagationIndoor": [4, 5, 6, 7, 8, 9, 10, 11, 12, 13],
+    "propagationOutdoor": [6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17],
+    "harvest": [8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19],
+    "harvestYear": 1,
+    "perennial": false
+    },
+    {
+    "plantName": "Koriander",
+    "plantType": 2,
+    "propagationIndoor": [5, 6, 7],
+    "propagationOutdoor": [8, 9],
+    "harvest": [12, 13],
+    "harvestYear": 1,
+    "perennial": false
+    },
+    {
+    "plantName": "Kümmel",
+    "plantType": 2,
+    "propagationIndoor": [],
+    "propagationOutdoor": [4, 5, 6],
+    "harvest": [12, 13, 14, 15, 16],
+    "harvestYear": 2,
+    "perennial": true
+    },
+    {
+    "plantName": "Kürbis",
+    "plantType": 1,
+    "propagationIndoor": [6, 7, 8],
+    "propagationOutdoor": [8, 9, 10, 11],
+    "harvest": [16, 17, 18, 19, 20, 21],
+    "harvestYear": 1,
+    "perennial": false
+    },
+    {
+    "plantName": "Lauch (Porree)",
+    "plantType": 1,
+    "propagationIndoor": [1, 2, 3, 4, 5, 6, 7],
+    "propagationOutdoor": [6, 7, 8, 9, 10, 11],
+    "harvest": [0, 1, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23],
+    "harvestYear": 1,
+    "perennial": false
+    },
+    {
+    "plantName": "Lavendel",
+    "plantType": 2,
+    "propagationIndoor": [2, 3, 4, 5, 6],
+    "propagationOutdoor": [9, 10, 11],
+    "harvest": [13, 14, 15, 16, 17],
+    "harvestYear": 1,
+    "perennial": true
+    },
+    {
+    "plantName": "Liebstöckel",
+    "plantType": 2,
+    "propagationIndoor": [],
+    "propagationOutdoor": [5, 6, 7],
+    "harvest": [8, 9, 10, 11, 12, 13, 14, 15, 16, 17],
+    "harvestYear": 1,
+    "perennial": false
+    },
+    {
+    "plantName": "Lollosalat",
+    "plantType": 3,
+    "propagationIndoor": [2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12],
+    "propagationOutdoor": [6, 7, 8, 9, 10, 11, 12, 13],
+    "harvest": [9, 10, 11, 12, 13, 14, 15, 16],
+    "harvestYear": 1,
+    "perennial": false
+    },
+    {
+    "plantName": "Majoran",
+    "plantType": 2,
+    "propagationIndoor": [4, 5, 6],
+    "propagationOutdoor": [9, 10, 11],
+    "harvest": [11, 12, 13, 14, 15],
+    "harvestYear": 1,
+    "perennial": false
+    },
+    {
+    "plantName": "Mangold",
+    "plantType": 1,
+    "propagationIndoor": [],
+    "propagationOutdoor": [5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15],
+    "harvest": [8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19],
+    "harvestYear": 1,
+    "perennial": false
+    },
+    {
+    "plantName": "Oregano",
+    "plantType": 2,
+    "propagationIndoor": [2, 3, 4, 5],
+    "propagationOutdoor": [7, 8],
+    "harvest": [10, 11, 12, 13, 14, 15, 16],
+    "harvestYear": 1,
+    "perennial": false
+    },
+    {
+    "plantName": "Paprika",
+    "plantType": 1,
+    "propagationIndoor": [4, 5, 6, 7],
+    "propagationOutdoor": [],
+    "harvest": [11, 12, 13, 14, 15, 16, 17, 18],
+    "harvestYear": 1,
+    "perennial": false
+    },
+    {
+    "plantName": "Pastinake",
+    "plantType": 1,
+    "propagationIndoor": [3, 4, 5],
+    "propagationOutdoor": [4, 5, 6, 7, 8, 9, 10],
+    "harvest": [0, 1, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23],
+    "harvestYear": 1,
+    "perennial": false
+    },
+    {
+    "plantName": "Petersilie",
+    "plantType": 2,
+    "propagationIndoor": [],
+    "propagationOutdoor": [3, 4, 5, 6, 7, 8, 9, 10, 11, 12],
+    "harvest": [8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21],
+    "harvestYear": 1,
+    "perennial": false
+    },
+    {
+    "plantName": "Pfefferminze",
+    "plantType": 2,
+    "propagationIndoor": [2, 3, 4, 5],
+    "propagationOutdoor": [8, 9, 10],
+    "harvest": [9, 10, 11, 12, 13, 14, 15, 16],
+    "harvestYear": 1,
+    "perennial": false
+    },
+    {
+    "plantName": "Pflücksalat",
+    "plantType": 3,
+    "propagationIndoor": [],
+    "propagationOutdoor": [5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15],
+    "harvest": [9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19],
+    "harvestYear": 1,
+    "perennial": false
+    },
+    {
+    "plantName": "Radicchio",
+    "plantType": 3,
+    "propagationIndoor": [4, 5, 6, 7, 8, 9, 10, 11, 12, 13],
+    "propagationOutdoor": [8, 9, 10, 11, 12, 13],
+    "harvest": [14, 15, 16, 17, 18, 19],
+    "harvestYear": 1,
+    "perennial": false
+    },
+    {
+    "plantName": "Radieschen",
+    "plantType": 1,
+    "propagationIndoor": [],
+    "propagationOutdoor": [5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16],
+    "harvest": [7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19],
+    "harvestYear": 1,
+    "perennial": false
+    },
+    {
+    "plantName": "Romanasalat",
+    "plantType": 3,
+    "propagationIndoor": [2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13],
+    "propagationOutdoor": [4, 5, 6, 7, 8, 9, 10, 11, 12, 13],
+    "harvest": [8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19],
+    "harvestYear": 1,
+    "perennial": false
+    },
+    {
+    "plantName": "Rosmarin",
+    "plantType": 2,
+    "propagationIndoor": [4, 5, 6, 7],
+    "propagationOutdoor": [],
+    "harvest": [8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19],
+    "harvestYear": 1,
+    "perennial": true
+    },
+    {
+    "plantName": "Rote Bete",
+    "plantType": 1,
+    "propagationIndoor": [],
+    "propagationOutdoor": [6, 7, 8, 9, 10, 11],
+    "harvest": [12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23],
+    "harvestYear": 1,
+    "perennial": false
+    },
+    {
+    "plantName": "Rosenkohl",
+    "plantType": 1,
+    "propagationIndoor": [5, 6, 7, 8],
+    "propagationOutdoor": [7, 8, 9, 10],
+    "harvest": [0, 1, 2, 3, 18, 19, 20, 21, 22, 23],
+    "harvestYear": 1,
+    "perennial": false
+    },
+    {
+    "plantName": "Rotkohl",
+    "plantType": 1,
+    "propagationIndoor": [1, 2, 3, 4, 5],
+    "propagationOutdoor": [6, 7, 8, 9, 10],
+    "harvest": [10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21],
+    "harvestYear": 1,
+    "perennial": false
+    },
+    {
+    "plantName": "Rucola",
+    "plantType": 3,
+    "propagationIndoor": [4, 5, 6, 7],
+    "propagationOutdoor": [4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15],
+    "harvest": [8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20],
+    "harvestYear": 1,
+    "perennial": false
+    },
+    {
+    "plantName": "Salatgurke",
+    "plantType": 1,
+    "propagationIndoor": [3, 4, 5, 6, 7],
+    "propagationOutdoor": [7, 8, 9, 10, 11],
+    "harvest": [11, 12, 13, 14, 15, 16, 17, 18],
+    "harvestYear": 1,
+    "perennial": false
+    },
+    {
+    "plantName": "Salbei",
+    "plantType": 2,
+    "propagationIndoor": [3, 4, 5, 6, 7, 8],
+    "propagationOutdoor": [8, 9, 10, 11],
+    "harvest": [8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19],
+    "harvestYear": 1,
+    "perennial": true
+    },
+    {
+    "plantName": "Schnittlauch",
+    "plantType": 2,
+    "propagationIndoor": [],
+    "propagationOutdoor": [3, 4, 5, 6, 7, 8, 9, 10, 11, 12],
+    "harvest": [8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19],
+    "harvestYear": 1,
+    "perennial": false
+    },
+    {
+    "plantName": "Spargel",
+    "plantType": 1,
+    "propagationIndoor": [5, 6, 7],
+    "propagationOutdoor": [6, 7],
+    "harvest": [5, 6, 7, 8, 9, 10, 11],
+    "harvestYear": 1,
+    "perennial": false
+    },
+    {
+    "plantName": "Spinat",
+    "plantType": 1,
+    "propagationIndoor": [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13 ,14, 15, 16],
+    "propagationOutdoor": [3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13 ,14, 15, 16, 17, 18],
+    "harvest": [4, 5, 6, 7, 8, 9, 10, 11, 12, 13 ,14, 15, 16, 17, 18, 19, 20, 21],
+    "harvestYear": 1,
+    "perennial": false
+    },
+    {
+    "plantName": "Thymian",
+    "plantType": 2,
+    "propagationIndoor": [4, 5, 6, 7],
+    "propagationOutdoor": [],
+    "harvest": [10, 11, 12, 13, 14, 15, 16, 17, 18, 19],
+    "harvestYear": 1,
+    "perennial": true
+    },
+    {
+    "plantName": "Tomate",
+    "plantType": 1,
+    "propagationIndoor": [3, 4, 5, 6],
+    "propagationOutdoor": [8, 9, 10],
+    "harvest": [12, 13, 14, 15, 16, 17, 18, 19],
+    "harvestYear": 1,
+    "perennial": false
+    },
+    {
+    "plantName": "Zitronenmelisse",
+    "plantType": 2,
+    "propagationIndoor": [5, 6, 7, 8],
+    "propagationOutdoor": [9, 10],
+    "harvest": [11, 12, 13, 14, 15, 16],
+    "harvestYear": 1,
+    "perennial": true
+    },
+    {
+    "plantName": "Zucchini",
+    "plantType": 1,
+    "propagationIndoor": [5, 6, 7, 8],
+    "propagationOutdoor": [7, 8, 9, 10],
+    "harvest": [10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20],
+    "harvestYear": 1,
+    "perennial": true
+    },
+    {
+    "plantName": "Zuckermais",
+    "plantType": 1,
+    "propagationIndoor": [],
+    "propagationOutdoor": [8, 9, 10],
+    "harvest": [14, 15, 16, 17],
+    "harvestYear": 1,
+    "perennial": true
+    },
+    {
+    "plantName": "Zuckerschoten",
+    "plantType": 1,
+    "propagationIndoor": [],
+    "propagationOutdoor": [7, 8, 9, 10, 11],
+    "harvest": [14, 15, 16, 17],
+    "harvestYear": 1,
+    "perennial": true
+    },
+    {
+    "plantName": "Zwiebeln",
+    "plantType": 1,
+    "propagationIndoor": [4, 5, 6],
+    "propagationOutdoor": [5, 6, 7, 8],
+    "harvest": [12, 13, 14, 15, 16, 17, 18, 19],
+    "harvestYear": 1,
+    "perennial": false
+    }
+]
