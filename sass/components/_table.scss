@@ -1,17 +1,31 @@
-table,
-td,
-th {
+table {
   border: 1px black solid;
+  border-collapse: collapse;
+}
+
+td {
+  min-width: 20px;
+}
+
+tr.even {
+  background-color: $background-table-dark;
+}
+
+tr.odd {
+  background-color: $background-table-light;
 }
 
 .backgroundindoor {
-  background-color: red;
+  background-color: var(--backgroundindoor);
+  border: 1px solid black;
 }
 
 .backgroundoutdoor {
-  background-color: lightgreen;
+  background-color: var(--backgroundoutdoor);
+  border: 1px solid black;
 }
 
 .backgroundharvest {
-  background-color: white;
+  background-color: var(--backgroundharvest);
+  border: 1px solid black;
 }

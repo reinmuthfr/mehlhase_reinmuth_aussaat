@@ -2,21 +2,21 @@ button {
   padding: 0.5em;
   border-radius: 0.5em;
   font-size: 1.2rem;
-  background: orange;
+  background: $orange;
   color: $black;
   border: none;
   box-shadow: none;
   margin: 0.5rem;
   font-weight: bold;
   &[disabled] {
-    background: $text;
+    background: $white;
   }
 }
 
 .autosuggest {
   input {
     background: $white;
-    color: $dark-purple;
+    color: $background-green;
     &::placeholder {
       color: $black;
     }

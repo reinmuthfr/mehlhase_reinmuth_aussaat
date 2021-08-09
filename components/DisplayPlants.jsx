@@ -1,12 +1,12 @@
 import Plant from './Plant';
 
 export default function DisplayPlants({ filteredPlants }) {
-  console.log(filteredPlants);
+  // console.log(filteredPlants);
   return (
     <div>
       <table id="mytable">
         <thead>
-          <tr>
+          <tr className="odd">
             <th>&nbsp;</th>
             <th colSpan="2">Jan</th>
             <th colSpan="2">Feb</th>
@@ -22,11 +22,14 @@ export default function DisplayPlants({ filteredPlants }) {
             <th colSpan="2">Dez</th>
             <th>mehrjährige Pflanze</th>
             <th>Ernte ab dem 2. Jahr</th>
+            <th>&nbsp;</th>
           </tr>
         </thead>
         <tbody id="divtbody">
           {/* <!-- Platz für dynamischen Content --> */}
-          {filteredPlants.map((plant)=><Plant key={plant.plantName} plant={plant}></Plant>)}
+          {filteredPlants.map((plant, index) => (
+            <Plant key={plant.plantName} plant={plant} index={index}></Plant>
+          ))}
         </tbody>
       </table>
     </div>

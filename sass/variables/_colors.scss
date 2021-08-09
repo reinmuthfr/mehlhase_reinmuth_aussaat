@@ -1,12 +1,23 @@
-$dark-purple: #232946;
+$background-green: #073824;
+$background-table-light: #1d865c;
+$background-table-dark: #0f6643;
+$white: #fffff0;
+$orange: orange;
+$black: black;
+$medium-red: #e85309;
+
+/* $dark-purple: #0f6643;
 $white: #fffffe;
-$text: #a7a9be;
+$text: #69eab6;
 $orange: #ff8906;
 $black: #0f0e17;
 $medium-red: #e53170;
-$light-red: #f25f4c;
+$light-red: #f25f4c; */
 
 :root {
   --link-color: #{$medium-red};
   --hover-color: #{$orange};
+  --backgroundindoor: #ffd7b1;
+  --backgroundoutdoor: lightgreen;
+  --backgroundharvest: #f5efe7;
 }
