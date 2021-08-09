@@ -14,7 +14,7 @@ export async function getStaticPaths() {
 
 export async function getStaticProps({ params }) {
   const plantName = params.plantName;
-  const encodedPlantName = encodeURIComponent(params.plantName);
+  const encodedPlantName = encodeURIComponent(plantName);
   const url = `https://de.wikipedia.org/api/rest_v1/page/summary/${encodedPlantName}`;
   // console.log({url});
   const response = await fetch(url);
