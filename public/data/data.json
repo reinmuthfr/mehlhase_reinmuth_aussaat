@@ -27,7 +27,7 @@
     "perennial": false
     },
     {
-    "plantName": "Bärlauch",
+    "plantName": "B\u00E4rlauch",
     "plantType": 2,
     "propagationIndoor": [],
     "propagationOutdoor": [0, 1, 2, 3, 4, 5, 18, 19, 20, 21, 22, 23],
@@ -510,7 +510,7 @@
     "propagationOutdoor": [7, 8, 9, 10],
     "harvest": [10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20],
     "harvestYear": 1,
-    "perennial": true
+    "perennial": false
     },
     {
     "plantName": "Zuckermais",
@@ -519,7 +519,7 @@
     "propagationOutdoor": [8, 9, 10],
     "harvest": [14, 15, 16, 17],
     "harvestYear": 1,
-    "perennial": true
+    "perennial": false
     },
     {
     "plantName": "Zuckerschoten",
@@ -528,7 +528,7 @@
     "propagationOutdoor": [7, 8, 9, 10, 11],
     "harvest": [14, 15, 16, 17],
     "harvestYear": 1,
-    "perennial": true
+    "perennial": false
     },
     {
     "plantName": "Zwiebeln",

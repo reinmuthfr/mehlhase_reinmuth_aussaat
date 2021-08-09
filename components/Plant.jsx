@@ -1,3 +1,5 @@
+import Link from 'next/link';
+
 import {
   getPlantType,
   getPerennialName,
@@ -23,7 +25,9 @@ export default function Plant({ plant, index }) {
         ))}
         <td rowSpan="3">{getPerennialName(plant.perennial)}</td>
         <td rowSpan="3">{getHarvestYear(plant.harvestYear)}</td>
-        <td rowSpan="3">Link</td>
+        <td rowSpan="3">            <Link plantName={plant.plantName} href={`/wiki_info/${plant.plantName}`}>
+              <a>{plant.plantName}</a>
+            </Link></td>
       </tr>
       <tr className={`${index % 2 === 0 ? `even` : `odd`}`}>
         {Array.from(Array(24).keys()).map((key) => (
