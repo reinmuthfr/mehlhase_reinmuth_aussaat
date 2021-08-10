@@ -16,10 +16,18 @@ export async function getStaticProps({ params }) {
   const plantName = params.plantName;
   const encodedPlantName = encodeURIComponent(plantName);
   const url = `https://de.wikipedia.org/api/rest_v1/page/summary/${encodedPlantName}`;
-  console.log({ url });
+  // console.log({ url });
   const response = await fetch(url);
-  const result = await response.json();
+  let result = await response.json();
   //console.log(result);
+  const plant = entries.find((entry) => entry.plantName === plantName);
+  const latinPlantName = plant.latinPlantName;
+  //console.log(latinPlantName);
+  const encodedLatinPlantName = encodeURIComponent(latinPlantName);
+  const latinURL = `https://de.wikipedia.org/api/rest_v1/page/summary/${encodedLatinPlantName}`;
+  const latinResponse = await fetch(latinURL);
+  const latinResult = await latinResponse.json();
+  result = result.type === 'standard' ? result : latinResult;
   return {
     props: {
       plantName,
@@ -29,7 +37,7 @@ export async function getStaticProps({ params }) {
 }
 
 export default function PlantWiki({ plantName = 'wiki', result }) {
-  console.log(plantName, result);
+  // console.log(plantName, result);
   return (
     <Layout title={plantName}>
       <div dangerouslySetInnerHTML={{ __html: result.extract_html }} />
