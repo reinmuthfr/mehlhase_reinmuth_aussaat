@@ -36,8 +36,24 @@ export function getPerennialName(perennialId) {
 export function getHarvestYear(yearId) {
   switch (yearId) {
     case 1:
-      return "nein";
+      return 'nein';
     case 2:
-      return "ja";
+      return 'ja';
   }
+}
+
+// from https://stackoverflow.com/questions/5866169/how-to-get-all-selected-values-of-a-multiple-select-box
+export function getSelectValues(select) {
+  var result = [];
+  var options = select && select.options;
+  var opt;
+
+  for (var i = 0, iLen = options.length; i < iLen; i++) {
+    opt = options[i];
+
+    if (opt.selected) {
+      result.push(opt.value || opt.text);
+    }
+  }
+  return result;
 }

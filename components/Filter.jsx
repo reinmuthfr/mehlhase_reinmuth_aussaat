@@ -1,4 +1,6 @@
-export default function Filter() {
+import { getSelectValues } from '@/library/helpers';
+
+export default function Filter({ setMonthIndoor }) {
   return (
     <div className="filter-grid">
       <div>
@@ -9,19 +11,24 @@ export default function Filter() {
           name="selectmonthindoor"
           size="12"
           multiple
+          onChange={(e) =>
+            setMonthIndoor(
+              getSelectValues(e.target).map((ele) => parseInt(ele))
+            )
+          }
         >
-          <option value="januaryindoor">Januar</option>
-          <option value="februaryindoor">Februar</option>
-          <option value="marchindoor">März</option>
-          <option value="aprilindoor">April</option>
-          <option value="mayindoor">Mai</option>
-          <option value="juneindoor">Juni</option>
-          <option value="julyindoor">Juli</option>
-          <option value="augustindoor">August</option>
-          <option value="septemberindoor">September</option>
-          <option value="octoberindoor">Oktober</option>
-          <option value="novemberindoor">November</option>
-          <option value="decemberindoor">Dezember</option>
+          <option value="0">Januar</option>
+          <option value="2">Februar</option>
+          <option value="4">März</option>
+          <option value="6">April</option>
+          <option value="8">Mai</option>
+          <option value="10">Juni</option>
+          <option value="12">Juli</option>
+          <option value="14">August</option>
+          <option value="16">September</option>
+          <option value="18">Oktober</option>
+          <option value="20">November</option>
+          <option value="22">Dezember</option>
         </select>
       </div>
 
@@ -34,18 +41,18 @@ export default function Filter() {
           size="12"
           multiple
         >
-          <option value="januaryoutdoor">Januar</option>
-          <option value="februaryoutdoor">Februar</option>
-          <option value="marchoutdoor">März</option>
-          <option value="apriloutdoor">April</option>
-          <option value="mayoutdoor">Mai</option>
-          <option value="juneoutdoor">Juni</option>
-          <option value="julyoutdoor">Juli</option>
-          <option value="augustoutdoor">August</option>
-          <option value="septemberoutdoor">September</option>
-          <option value="octoberoutdoor">Oktober</option>
-          <option value="novemberoutdoor">November</option>
-          <option value="decemberoutdoor">Dezember</option>
+          <option value="0">Januar</option>
+          <option value="2">Februar</option>
+          <option value="4">März</option>
+          <option value="6">April</option>
+          <option value="8">Mai</option>
+          <option value="10">Juni</option>
+          <option value="12">Juli</option>
+          <option value="14">August</option>
+          <option value="16">September</option>
+          <option value="18">Oktober</option>
+          <option value="20">November</option>
+          <option value="22">Dezember</option>
         </select>
       </div>
 
@@ -60,7 +67,7 @@ export default function Filter() {
           </select>
         </div>
 
-        <div className="perrenial">
+        <div className="perennial">
           <input
             type="checkbox"
             name="checkbox"
@@ -107,11 +114,6 @@ export default function Filter() {
           </tbody>
           <tfoot></tfoot>
         </table>
-      </div>
-
-      <div>
-        <button id="filterbutton">Filter anwenden</button>
-        <button id="resetbutton">Filter zurücksetzen</button>
       </div>
     </div>
   );
