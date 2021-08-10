@@ -2,7 +2,7 @@ import { getSelectValues } from '@/library/helpers';
 
 export default function Filter({ setMonthIndoor }) {
   return (
-    <div className="filter-grid">
+    <div className="filter-flex">
       <div>
         <label htmlFor="selectmonthindoor">Aussaatmonat Haus:</label>
         <br />
@@ -56,7 +56,7 @@ export default function Filter({ setMonthIndoor }) {
         </select>
       </div>
 
-      <div>
+      <div className="kind-perennial">
         <div>
           <label htmlFor="selectplanttype">Art der Pflanze:</label>
           <br />
@@ -68,29 +68,32 @@ export default function Filter({ setMonthIndoor }) {
         </div>
 
         <div className="perennial">
+          <label htmlFor="perennial">mehrjährig</label>
           <input
             type="checkbox"
             name="checkbox"
             id="perennial"
             value="perennial"
           />
-          &nbsp;<label htmlFor="perennial">mehrjährig</label>
+          &nbsp;
           <br />
+          <label htmlFor="harvest1">Ernte ab 1. Jahr</label>
           <input
             type="checkbox"
             name="checkbox"
             id="harvest1"
             value="harvest1"
           />
-          &nbsp;<label htmlFor="harvest1">Ernte ab 1. Jahr</label>
+          &nbsp;
           <br />
+          <label htmlFor="harvest2">Ernte ab 2. Jahr</label>
           <input
             type="checkbox"
             name="checkbox"
             id="harvest2"
             value="harvest2"
           />
-          &nbsp;<label htmlFor="harvest2">Ernte ab 2. Jahr</label>
+          &nbsp;
         </div>
       </div>
 

@@ -1,4 +1,4 @@
-.filter-grid {
+.filter-flex {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
@@ -6,24 +6,14 @@
   align-items: center;
 }
 
-
-.perennial {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-around;
+.kind-perennial {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
-button {
-  padding: 0.5em;
-  border-radius: 0.5em;
-  font-size: 1.2rem;
-  background: $orange;
-  color: $black;
-  border: none;
-  box-shadow: none;
-  margin: 0.5rem;
-  font-weight: bold;
-  &[disabled] {
-    background: $white;
-  }
+.perennial {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
 }

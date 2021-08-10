@@ -1,7 +1,12 @@
+.plants-display {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
 table {
   border: 1px black solid;
   border-collapse: collapse;
-  grid-area: 'table';
 }
 
 td {
@@ -56,4 +61,10 @@ caption {
 .center {
   text-align: center;
   vertical-align: middle;
+}
+
+.no-results {
+  font-size: 3rem;
+  background-color: coral;
+  border: 2px dashed darkslategray;
 }

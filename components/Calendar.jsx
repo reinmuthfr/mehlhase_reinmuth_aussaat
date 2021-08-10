@@ -5,7 +5,7 @@ import Filter from './Filter';
 export default function Calendar() {
   const [plants, setPlants] = useState([]);
   const [filteredPlants, setFilteredPlants] = useState(plants);
-  const [filterReload, setFilterReload] = useState(false);
+  const [filterReload, triggerFilterReload] = useState(Date.now());
   const [monthIndoor, setMonthIndoor] = useState([]);
 
   useEffect(() => {
@@ -17,13 +17,9 @@ export default function Calendar() {
   }, [plants]);
 
   const filterByPropagationIndoor = useCallback(() => {
-    const filtered = plants.filter(({ propagationIndoor }) => {
-      console.log({ monthIndoor });
-      console.log({ propagationIndoor });
+    return plants.filter(({ propagationIndoor }) => {
       return monthIndoor.every((month) => propagationIndoor.includes(month));
     });
-    console.log({ filtered });
-    return filtered;
   }, [plants, monthIndoor]);
 
   /*   useEffect(() => {
@@ -33,6 +29,10 @@ export default function Calendar() {
       setFilteredPlants(filterByPropagationIndoor(plants, monthIndoor));
     }
   }, [applyFilter, plants, filterByPropagationIndoor, monthIndoor]); */
+
+  function resetFilters() {
+    setMonthIndoor([]);
+  }
 
   function filterAll() {
     setFilteredPlants(filterByPropagationIndoor(plants));
@@ -45,7 +45,7 @@ export default function Calendar() {
         monthIndoor={monthIndoor}
         setMonthIndoor={setMonthIndoor}
       ></Filter>
-      <div>
+      <div className="calendar-buttons">
         <button
           id="filterbutton"
           onClick={() => {
@@ -57,7 +57,8 @@ export default function Calendar() {
         <button
           id="resetbutton"
           onClick={() => {
-            setFilterReload((applyFilter) => !applyFilter);
+            triggerFilterReload(Date.now());
+            resetFilters();
             setFilteredPlants(plants);
           }}
         >
