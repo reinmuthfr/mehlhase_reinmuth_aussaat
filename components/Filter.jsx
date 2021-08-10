@@ -1,6 +1,6 @@
 import { getSelectValues } from '@/library/helpers';
 
-export default function Filter({ setMonthIndoor }) {
+export default function Filter({ setMonthIndoor, setMonthOutdoor }) {
   return (
     <div className="filter-flex">
       <div>
@@ -40,6 +40,11 @@ export default function Filter({ setMonthIndoor }) {
           name="selectmonthoutdoor"
           size="12"
           multiple
+          onChange={(e) =>
+            setMonthOutdoor(
+              getSelectValues(e.target).map((ele) => parseInt(ele))
+            )
+          }
         >
           <option value="0">Januar</option>
           <option value="2">Februar</option>

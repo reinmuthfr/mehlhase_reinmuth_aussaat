@@ -1,4 +1,8 @@
-import { useState, useEffect, useCallback } from 'react';
+import {
+  filterByPropagationIndoor,
+  filterByPropagationOutdoor,
+} from '@/library/filter_functions';
+import { useState, useEffect, useMemo } from 'react';
 import DisplayPlants from './DisplayPlants';
 import Filter from './Filter';
 
@@ -7,6 +11,7 @@ export default function Calendar() {
   const [filteredPlants, setFilteredPlants] = useState(plants);
   const [filterReload, triggerFilterReload] = useState(Date.now());
   const [monthIndoor, setMonthIndoor] = useState([]);
+  const [monthOutdoor, setMonthOutdoor] = useState([]);
 
   useEffect(() => {
     fetchData(setPlants);
@@ -16,11 +21,13 @@ export default function Calendar() {
     setFilteredPlants(plants);
   }, [plants]);
 
-  const filterByPropagationIndoor = useCallback(() => {
-    return plants.filter(({ propagationIndoor }) => {
-      return monthIndoor.every((month) => propagationIndoor.includes(month));
-    });
-  }, [plants, monthIndoor]);
+  const preFilteredPlants = useMemo(() => {
+    let filterResult = plants;
+    filterResult = filterByPropagationIndoor(filterResult, monthIndoor);
+    filterResult = filterByPropagationOutdoor(filterResult, monthOutdoor);
+    return filterResult;
+  }, [plants, monthIndoor, monthOutdoor]);
+  console.log(preFilteredPlants);
 
   /*   useEffect(() => {
     if (!applyFilter) {
@@ -32,18 +39,23 @@ export default function Calendar() {
 
   function resetFilters() {
     setMonthIndoor([]);
+    setMonthOutdoor([]);
   }
 
   function filterAll() {
-    setFilteredPlants(filterByPropagationIndoor(plants));
+    setFilteredPlants(preFilteredPlants);
+  }
+
+  if (!plants.length) {
+    return null;
   }
 
   return (
     <div className="calendar">
       <Filter
         key={filterReload}
-        monthIndoor={monthIndoor}
         setMonthIndoor={setMonthIndoor}
+        setMonthOutdoor={setMonthOutdoor}
       ></Filter>
       <div className="calendar-buttons">
         <button
