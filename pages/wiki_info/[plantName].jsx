@@ -16,7 +16,7 @@ export async function getStaticProps({ params }) {
   const plantName = params.plantName;
   const encodedPlantName = encodeURIComponent(plantName);
   const url = `https://de.wikipedia.org/api/rest_v1/page/summary/${encodedPlantName}`;
-  // console.log({url});
+  console.log({ url });
   const response = await fetch(url);
   const result = await response.json();
   //console.log(result);
@@ -29,7 +29,7 @@ export async function getStaticProps({ params }) {
 }
 
 export default function PlantWiki({ plantName = 'wiki', result }) {
-  // console.log(plantName, result);
+  console.log(plantName, result);
   return (
     <Layout title={plantName}>
       <div dangerouslySetInnerHTML={{ __html: result.extract_html }} />
@@ -42,7 +42,15 @@ export default function PlantWiki({ plantName = 'wiki', result }) {
         ></Image>
       )}
       <br></br>
-      <a href={result.content_urls.desktop.page}>Mehr</a>
+      {result.content_urls && (
+        <a
+          href={result.content_urls.desktop.page}
+          rel="noreferrer"
+          target="_blank"
+        >
+          Mehr
+        </a>
+      )}
     </Layout>
   );
 }
