@@ -1,10 +1,13 @@
 table {
   border: 1px black solid;
   border-collapse: collapse;
+  grid-area: 'table';
 }
 
 td {
-  min-width: 20px;
+  min-width: 1.2rem;
+  height: 1.4rem;
+  padding: 0.2rem;
 }
 
 tr.even {
@@ -28,4 +31,29 @@ tr.odd {
 .backgroundharvest {
   background-color: var(--backgroundharvest);
   border: 1px solid black;
+}
+
+td.plant-name {
+  min-width: 15rem;
+  font-weight: bold;
+}
+
+caption {
+  text-align: center;
+  vertical-align: middle;
+  font-weight: bold;
+  font-size: 1.2rem;
+}
+
+.smaller {
+  font-size: 0.7rem;
+}
+
+.italic {
+  font-style: italic;
+}
+
+.center {
+  text-align: center;
+  vertical-align: middle;
 }

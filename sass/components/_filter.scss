@@ -1,3 +1,18 @@
+.filter-grid {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  align-items: center;
+}
+
+
+.perennial {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
 button {
   padding: 0.5em;
   border-radius: 0.5em;
@@ -10,15 +25,5 @@ button {
   font-weight: bold;
   &[disabled] {
     background: $white;
-  }
-}
-
-.autosuggest {
-  input {
-    background: $white;
-    color: $background-green;
-    &::placeholder {
-      color: $black;
-    }
   }
 }

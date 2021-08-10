@@ -9,10 +9,7 @@ export default function Navigation() {
         <a>Start</a>
       </Link>
       <Link href="/contact">
-        <a>Kontakt</a>
-      </Link>
-      <Link href="/impressum">
-        <a>Impressum</a>
+        <a>Roll your own</a>
       </Link>
     </nav>
   );
