@@ -33,7 +33,7 @@ export default function Plant({ plant, index }) {
             plantName={plant.plantName}
             href={`/wiki_info/${plant.plantName}`}
           >
-            <a>{plant.plantName}</a>
+            <a target="_blank">{plant.plantName}</a>
           </Link>
         </td>
       </tr>
