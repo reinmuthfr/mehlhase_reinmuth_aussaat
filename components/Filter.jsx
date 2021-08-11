@@ -1,6 +1,13 @@
 import { getSelectValues } from '@/library/helpers';
 
-export default function Filter({ setMonthIndoor, setMonthOutdoor }) {
+export default function Filter({
+  setMonthIndoor,
+  setMonthOutdoor,
+  setPerennial,
+  setHarvest1,
+  setHarvest2,
+  setPlantType,
+}) {
   return (
     <div className="filter-flex">
       <div>
@@ -65,7 +72,17 @@ export default function Filter({ setMonthIndoor, setMonthOutdoor }) {
         <div>
           <label htmlFor="selectplanttype">Art der Pflanze:</label>
           <br />
-          <select id="selectplanttype" name="selectplanttype" size="3" multiple>
+          <select
+            id="selectplanttype"
+            name="selectplanttype"
+            size="3"
+            multiple
+            onChange={(e) =>
+              setPlantType(
+                getSelectValues(e.target).map((ele) => parseInt(ele))
+              )
+            }
+          >
             <option value="1">Gemüse</option>
             <option value="2">Kräuter</option>
             <option value="3">Salat</option>
@@ -76,18 +93,22 @@ export default function Filter({ setMonthIndoor, setMonthOutdoor }) {
           <label htmlFor="perennial">mehrjährig</label>
           <input
             type="checkbox"
-            name="checkbox"
+            name="perennial"
             id="perennial"
-            value="perennial"
+            onClick={() => {
+              setPerennial((perennial) => !perennial);
+            }}
           />
           &nbsp;
           <br />
           <label htmlFor="harvest1">Ernte ab 1. Jahr</label>
           <input
             type="checkbox"
-            name="checkbox"
+            name="harvest1"
             id="harvest1"
-            value="harvest1"
+            onClick={() => {
+              setHarvest1((harvest1) => !harvest1);
+            }}
           />
           &nbsp;
           <br />
@@ -96,7 +117,9 @@ export default function Filter({ setMonthIndoor, setMonthOutdoor }) {
             type="checkbox"
             name="checkbox"
             id="harvest2"
-            value="harvest2"
+            onClick={() => {
+              setHarvest2((harvest2) => !harvest2);
+            }}
           />
           &nbsp;
         </div>

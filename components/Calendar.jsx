@@ -1,6 +1,10 @@
 import {
   filterByPropagationIndoor,
   filterByPropagationOutdoor,
+  filterByPerennial,
+  filterByHarvest1,
+  filterByHarvest2,
+  filterByPlantType,
 } from '@/library/filter_functions';
 import { useState, useEffect, useMemo } from 'react';
 import DisplayPlants from './DisplayPlants';
@@ -12,6 +16,10 @@ export default function Calendar() {
   const [filterReload, triggerFilterReload] = useState(Date.now());
   const [monthIndoor, setMonthIndoor] = useState([]);
   const [monthOutdoor, setMonthOutdoor] = useState([]);
+  const [perennial, setPerennial] = useState(false);
+  const [harvest1, setHarvest1] = useState(false);
+  const [harvest2, setHarvest2] = useState(false);
+  const [plantType, setPlantType] = useState([1, 2, 3]);
 
   useEffect(() => {
     fetchData(setPlants);
@@ -25,21 +33,28 @@ export default function Calendar() {
     let filterResult = plants;
     filterResult = filterByPropagationIndoor(filterResult, monthIndoor);
     filterResult = filterByPropagationOutdoor(filterResult, monthOutdoor);
+    filterResult = !perennial ? filterResult : filterByPerennial(filterResult);
+    filterResult = !harvest1 ? filterResult : filterByHarvest1(filterResult);
+    filterResult = !harvest2 ? filterResult : filterByHarvest2(filterResult);
+    filterResult = filterByPlantType(filterResult, plantType);
     return filterResult;
-  }, [plants, monthIndoor, monthOutdoor]);
-  console.log(preFilteredPlants);
-
-  /*   useEffect(() => {
-    if (!applyFilter) {
-      setFilteredPlants(plants);
-    } else {
-      setFilteredPlants(filterByPropagationIndoor(plants, monthIndoor));
-    }
-  }, [applyFilter, plants, filterByPropagationIndoor, monthIndoor]); */
+  }, [
+    plants,
+    monthIndoor,
+    monthOutdoor,
+    perennial,
+    harvest1,
+    harvest2,
+    plantType,
+  ]);
 
   function resetFilters() {
     setMonthIndoor([]);
     setMonthOutdoor([]);
+    setPerennial(false);
+    setHarvest1(false);
+    setHarvest2(false);
+    setPlantType([1, 2, 3]);
   }
 
   function filterAll() {
@@ -56,6 +71,10 @@ export default function Calendar() {
         key={filterReload}
         setMonthIndoor={setMonthIndoor}
         setMonthOutdoor={setMonthOutdoor}
+        setPerennial={setPerennial}
+        setHarvest1={setHarvest1}
+        setHarvest2={setHarvest2}
+        setPlantType={setPlantType}
       ></Filter>
       <div className="calendar-buttons">
         <button
