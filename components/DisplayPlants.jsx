@@ -29,7 +29,7 @@ export default function DisplayPlants({ filteredPlants }) {
               <th colSpan="2">Dez</th>
               <th>mehrjährige Pflanze</th>
               <th>Ernte ab 2. Jahr</th>
-              <th>Wikipedia</th>
+              <th>Info</th>
             </tr>
           </thead>
           <tbody id="divtbody">

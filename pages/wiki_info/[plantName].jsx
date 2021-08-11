@@ -3,16 +3,13 @@ import Image from 'next/image';
 import Layout from '@/components/Layout';
 const entries = require('@/data/data.json');
 
-//TODO:Wie setzt man hier absoluten Pfad für beliebige hosts
-export async function getStaticPaths() {
-  let paths = [];
-  //const entries = await (await fetch('../../data/data.json')).json();
-  //console.log(entries);
-  paths = entries.map(({ plantName }) => ({ params: { plantName } }));
-  return { paths, fallback: false };
-}
+/**
+ * getStaticProps funktioniert nicht, da die URLs für die Abfragen an die Wikipedia-Api teilweise
+ * von den Antwort-URLS abweichen, daher getServerSideProps
+ *
+ */
 
-export async function getStaticProps({ params }) {
+export async function getServerSideProps({ params }) {
   const plantName = params.plantName;
   const encodedPlantName = encodeURIComponent(plantName);
   const url = `https://de.wikipedia.org/api/rest_v1/page/summary/${encodedPlantName}`;
@@ -50,13 +47,14 @@ export default function PlantWiki({ plantName = 'wiki', result }) {
         ></Image>
       )}
       <br></br>
+      <div>Aus Wikipedia</div>
       {result.content_urls && (
         <a
           href={result.content_urls.desktop.page}
           rel="noreferrer"
           target="_blank"
         >
-          Mehr
+          Zum vollständigen Wikipedia-Artikel
         </a>
       )}
     </Layout>
