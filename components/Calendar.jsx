@@ -112,13 +112,11 @@ async function fetchData(setPlants) {
       `https://plant-calendar-193cd-default-rtdb.europe-west1.firebasedatabase.app/plants_object.json`
     )
   ).json();
-  console.log({ data });
   const dataArr = [];
   for (const key in data) {
     {
       dataArr.push(data[key]);
     }
   }
-  console.log(dataArr);
   setPlants(dataArr.sort((a, b) => a.plantName.localeCompare(b.plantName)));
 }
