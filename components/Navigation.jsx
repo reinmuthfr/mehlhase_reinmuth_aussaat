@@ -8,8 +8,8 @@ export default function Navigation() {
       <Link href="/">
         <a>Start</a>
       </Link>
-      <Link href="/contact">
-        <a>Roll your own</a>
+      <Link href="/diy">
+        <a>DIY-Kalender</a>
       </Link>
     </nav>
   );
