@@ -8,9 +8,10 @@ import {
 } from '@/library/filter_functions';
 import { useState, useEffect, useMemo } from 'react';
 import DisplayPlants from './DisplayPlants';
+import EditPlant from './EditPlant';
 import Filter from './Filter';
 
-export default function Calendar() {
+export default function Calendar({ edit }) {
   const [plants, setPlants] = useState([]);
   const [filteredPlants, setFilteredPlants] = useState(plants);
   const [filterReload, triggerFilterReload] = useState(Date.now());
@@ -101,6 +102,7 @@ export default function Calendar() {
           (plant) => plant.propagationIndoor && plant.propagationOutdoor
         )}
       ></DisplayPlants>
+      {edit && <EditPlant setPlants={setPlants}></EditPlant>}
     </div>
   );
 }
