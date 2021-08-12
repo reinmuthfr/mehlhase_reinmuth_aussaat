@@ -4,21 +4,19 @@ import Layout from '@/components/Layout';
 //const entries = require('@/data/data.json');
 
 /**
- * getStaticProps funktioniert nicht, da die URLs für die Abfragen an die Wikipedia-Api teilweise
- * von den Antwort-URLS abweichen, daher getServerSideProps
- *
+ * getStaticProps funktioniert auch für die default-plants nicht, da die URLs für die Abfragen an die Wikipedia-Api teilweise
+ * von den Antwort-URLS abweichen;
+ * für den jetzigen Ansatz mit query-Übergabe aus Plant-Komponente sowieso getServerSideProps
  */
 
 export async function getServerSideProps({ params, query }) {
-  console.log(query);
+  // console.log(query);
   const plantName = params.plantName;
+  const latinPlantName = query.latinName;
   const encodedPlantName = encodeURIComponent(plantName);
-  const curl = `https://plant-calendar-193cd-default-rtdb.europe-west1.firebasedatabase.app/plants_object/${encodedPlantName}.json?print=pretty`;
-  const dbresponse = await fetch(curl);
-  const plant = await dbresponse.json();
+  const encodedLatinPlantName = encodeURIComponent(latinPlantName);
   let result = {};
   let latinResult = {};
-
   const url = `https://de.wikipedia.org/api/rest_v1/page/summary/${encodedPlantName}`;
   try {
     const response = await fetch(url);
@@ -27,8 +25,6 @@ export async function getServerSideProps({ params, query }) {
     console.log(error);
   }
 
-  const latinPlantName = plant.latinPlantName;
-  const encodedLatinPlantName = encodeURIComponent(latinPlantName);
   const latinURL = `https://de.wikipedia.org/api/rest_v1/page/summary/${encodedLatinPlantName}`;
   try {
     const latinResponse = await fetch(latinURL);
