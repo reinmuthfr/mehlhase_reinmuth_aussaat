@@ -1,6 +1,6 @@
 import Image from 'next/image';
-
 import Layout from '@/components/Layout';
+
 const entries = require('@/data/data.json');
 
 /**
@@ -41,8 +41,16 @@ export async function getServerSideProps({ params }) {
     },
   };
 }
-//TODO:handle case that wikipedia doesn't return entry
+
 export default function PlantWiki({ plantName = 'wiki', result }) {
+  if (result.type !== 'standard') {
+    return (
+      <Layout
+        title={`Kein passender Wikipedia-Eintrag für ${plantName}`}
+      ></Layout>
+    );
+  }
+
   return (
     <Layout title={plantName}>
       <div dangerouslySetInnerHTML={{ __html: result.extract_html }} />

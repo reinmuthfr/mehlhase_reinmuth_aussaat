@@ -275,6 +275,7 @@
   },
   {
     "plantName": "Kürbis",
+    "latinPlantName": "Cucurbita",
     "plantType": 1,
     "propagationIndoor": [6, 7, 8],
     "propagationOutdoor": [8, 9, 10, 11],
