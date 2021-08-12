@@ -21,10 +21,11 @@ export default function Calendar({ edit }) {
   const [harvest1, setHarvest1] = useState(false);
   const [harvest2, setHarvest2] = useState(false);
   const [plantType, setPlantType] = useState([1, 2, 3]);
+  const [userId, setUserId] = useState('');
 
   useEffect(() => {
-    fetchData(setPlants);
-  }, []);
+    fetchData(setPlants, userId);
+  }, [userId]);
 
   useEffect(() => {
     setFilteredPlants(plants);
@@ -79,6 +80,7 @@ export default function Calendar({ edit }) {
       ></Filter>
       <div className="calendar-buttons">
         <button
+          className="big-button"
           id="filterbutton"
           onClick={() => {
             filterAll();
@@ -87,6 +89,7 @@ export default function Calendar({ edit }) {
           Filter anwenden
         </button>
         <button
+          className="big-button"
           id="resetbutton"
           onClick={() => {
             triggerFilterReload(Date.now());
@@ -101,20 +104,43 @@ export default function Calendar({ edit }) {
         filteredPlants={filteredPlants.filter(
           (plant) => plant.propagationIndoor && plant.propagationOutdoor
         )}
+        edit={edit}
+        setPlants={setPlants}
+        plants={plants}
+        userId={userId}
       ></DisplayPlants>
-      {edit && <EditPlant setPlants={setPlants}></EditPlant>}
+      {edit && (
+        <EditPlant setPlants={setPlants} setUserId={setUserId}></EditPlant>
+      )}
     </div>
   );
 }
 
-async function fetchData(setPlants) {
+async function fetchData(setPlants, userId) {
   // const data = await (await fetch(`/data/data.json`)).json();
-  const data = await (
-    await fetch(
-      `https://plant-calendar-193cd-default-rtdb.europe-west1.firebasedatabase.app/plants_object.json`
-    )
-  ).json();
-  const dataArr = [];
+  let dataArr = [];
+  let data = {};
+  if (!userId) {
+    try {
+      data = await (
+        await fetch(
+          `https://plant-calendar-193cd-default-rtdb.europe-west1.firebasedatabase.app/plants_object.json`
+        )
+      ).json();
+    } catch (error) {
+      console.log(error);
+    }
+  } else {
+    try {
+      data = await (
+        await fetch(
+          `https://plant-calendar-193cd-default-rtdb.europe-west1.firebasedatabase.app/users/${userId}/plants_object.json`
+        )
+      ).json();
+    } catch (error) {
+      console.log(error);
+    }
+  }
   for (const key in data) {
     {
       dataArr.push(data[key]);

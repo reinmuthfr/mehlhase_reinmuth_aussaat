@@ -6,7 +6,14 @@ import {
   getHarvestYear,
 } from '@/library/helpers';
 
-export default function Plant({ plant, index }) {
+export default function Plant({
+  plant,
+  index,
+  edit,
+  plants,
+  setPlants,
+  userId,
+}) {
   return (
     <>
       <tr className={`${index % 2 === 0 ? `even` : `odd`}`}>
@@ -31,11 +38,25 @@ export default function Plant({ plant, index }) {
           {' '}
           <Link
             plantName={plant.plantName}
-            href={`/wiki_info/${plant.plantName}`}
+            href={{
+              pathname: `/wiki_info/${plant.plantName}`,
+              query: { userId: userId },
+            }}
           >
             <a target="_blank">{plant.plantName}</a>
           </Link>
         </td>
+        {edit && (
+          <td rowSpan="3">
+            <button
+              onClick={() => {
+                setPlants(plants.filter((ele) => ele !== plant));
+              }}
+            >
+              &times;
+            </button>
+          </td>
+        )}
       </tr>
       <tr className={`${index % 2 === 0 ? `even` : `odd`}`}>
         <td className="plant-name smaller italic">{plant.latinPlantName}</td>

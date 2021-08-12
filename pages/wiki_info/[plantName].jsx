@@ -9,7 +9,8 @@ import Layout from '@/components/Layout';
  *
  */
 
-export async function getServerSideProps({ params }) {
+export async function getServerSideProps({ params, query }) {
+  console.log(query);
   const plantName = params.plantName;
   const encodedPlantName = encodeURIComponent(plantName);
   const curl = `https://plant-calendar-193cd-default-rtdb.europe-west1.firebasedatabase.app/plants_object/${encodedPlantName}.json?print=pretty`;

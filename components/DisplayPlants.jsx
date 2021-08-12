@@ -1,7 +1,13 @@
 import Plant from './Plant';
 //TODO:Titel für Spalte Wikipedia überdenken (wir verlinken ja nicht einfach auf Wikipedia; irgendwo)
 // sollte das aber natürlich stehen
-export default function DisplayPlants({ filteredPlants }) {
+export default function DisplayPlants({
+  filteredPlants,
+  plants,
+  edit,
+  setPlants,
+  userId,
+}) {
   // console.log(filteredPlants);
   return (
     <div className="plants-display">
@@ -30,12 +36,21 @@ export default function DisplayPlants({ filteredPlants }) {
               <th>mehrjährige Pflanze</th>
               <th>Ernte ab 2. Jahr</th>
               <th>Info</th>
+              {edit && <th>Löchen</th>}
             </tr>
           </thead>
           <tbody id="divtbody">
             {/* <!-- Platz für dynamischen Content --> */}
             {filteredPlants.map((plant, index) => (
-              <Plant key={plant.plantName} plant={plant} index={index}></Plant>
+              <Plant
+                key={plant.plantName}
+                plant={plant}
+                index={index}
+                edit={edit}
+                plants={plants}
+                setPlants={setPlants}
+                userId={userId}
+              ></Plant>
             ))}
           </tbody>
         </table>
