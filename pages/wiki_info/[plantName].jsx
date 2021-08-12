@@ -10,17 +10,29 @@ const entries = require('@/data/data.json');
  */
 
 export async function getServerSideProps({ params }) {
+  let result = {};
+  let latinResult = {};
   const plantName = params.plantName;
   const encodedPlantName = encodeURIComponent(plantName);
   const url = `https://de.wikipedia.org/api/rest_v1/page/summary/${encodedPlantName}`;
-  const response = await fetch(url);
-  let result = await response.json();
+  try {
+    const response = await fetch(url);
+    result = await response.json();
+  } catch (error) {
+    console.log(error);
+  }
+
   const plant = entries.find((entry) => entry.plantName === plantName);
   const latinPlantName = plant.latinPlantName;
   const encodedLatinPlantName = encodeURIComponent(latinPlantName);
   const latinURL = `https://de.wikipedia.org/api/rest_v1/page/summary/${encodedLatinPlantName}`;
-  const latinResponse = await fetch(latinURL);
-  const latinResult = await latinResponse.json();
+  try {
+    const latinResponse = await fetch(latinURL);
+    latinResult = await latinResponse.json();
+  } catch (error) {
+    console.log(error);
+  }
+
   result = result.type === 'standard' ? result : latinResult;
   return {
     props: {
@@ -29,7 +41,7 @@ export async function getServerSideProps({ params }) {
     },
   };
 }
-
+//TODO:handle case that wikipedia doesn't return entry
 export default function PlantWiki({ plantName = 'wiki', result }) {
   return (
     <Layout title={plantName}>
