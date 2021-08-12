@@ -96,12 +96,29 @@ export default function Calendar() {
           Filter zurücksetzen
         </button>
       </div>
-      <DisplayPlants filteredPlants={filteredPlants}></DisplayPlants>
+      <DisplayPlants
+        filteredPlants={filteredPlants.filter(
+          (plant) => plant.propagationIndoor && plant.propagationOutdoor
+        )}
+      ></DisplayPlants>
     </div>
   );
 }
 
 async function fetchData(setPlants) {
-  const data = await (await fetch(`/data/data.json`)).json();
-  setPlants(data.sort((a, b) => a.plantName.localeCompare(b.plantName)));
+  // const data = await (await fetch(`/data/data.json`)).json();
+  const data = await (
+    await fetch(
+      `https://plant-calendar-193cd-default-rtdb.europe-west1.firebasedatabase.app/plants_object.json`
+    )
+  ).json();
+  console.log({ data });
+  const dataArr = [];
+  for (const key in data) {
+    {
+      dataArr.push(data[key]);
+    }
+  }
+  console.log(dataArr);
+  setPlants(dataArr.sort((a, b) => a.plantName.localeCompare(b.plantName)));
 }

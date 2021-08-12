@@ -1,5 +1,5 @@
-[
-  {
+{
+  "Pak Choi": {
     "plantName": "Pak Choi",
     "latinPlantName": "Brassica rapa subsp. chinensis",
     "plantType": 3,
@@ -9,7 +9,7 @@
     "harvestYear": 1,
     "perennial": false
   },
-  {
+  "Aubergine": {
     "plantName": "Aubergine",
     "latinPlantName": "Solanum melongena",
     "plantType": 1,
@@ -19,7 +19,7 @@
     "harvestYear": 1,
     "perennial": false
   },
-  {
+  "Basilikum": {
     "plantName": "Basilikum",
     "latinPlantName": "Ocimum basilicum",
     "plantType": 2,
@@ -29,7 +29,7 @@
     "harvestYear": 1,
     "perennial": false
   },
-  {
+  "Bärlauch": {
     "plantName": "Bärlauch",
     "latinPlantName": "Allium ursinum",
     "plantType": 2,
@@ -39,7 +39,7 @@
     "harvestYear": 1,
     "perennial": true
   },
-  {
+  "Blumenkohl": {
     "plantName": "Blumenkohl",
     "latinPlantName": "Brassica oleracea var. botrytis",
     "plantType": 1,
@@ -49,7 +49,7 @@
     "harvestYear": 1,
     "perennial": false
   },
-  {
+  "Bohnenkraut": {
     "plantName": "Bohnenkraut",
     "latinPlantName": "Satureja",
     "plantType": 2,
@@ -59,7 +59,7 @@
     "harvestYear": 1,
     "perennial": false
   },
-  {
+  "Brokkoli": {
     "plantName": "Brokkoli",
     "latinPlantName": "Brassica oleracea var. italica",
     "plantType": 1,
@@ -69,7 +69,7 @@
     "harvestYear": 1,
     "perennial": false
   },
-  {
+  "Buschbohnen": {
     "plantName": "Buschbohnen",
     "latinPlantName": "Phaseolus vulgaris",
     "plantType": 1,
@@ -79,7 +79,7 @@
     "harvestYear": 1,
     "perennial": false
   },
-  {
+  "Dill": {
     "plantName": "Dill",
     "latinPlantName": "Anethum graveolens",
     "plantType": 2,
@@ -89,7 +89,7 @@
     "harvestYear": 1,
     "perennial": false
   },
-  {
+  "Eisbergsalat": {
     "plantName": "Eisbergsalat",
     "latinPlantName": "Lactuca sativa var. capitata nidus tenerimm",
     "plantType": 3,
@@ -99,7 +99,7 @@
     "harvestYear": 1,
     "perennial": false
   },
-  {
+  "Endivien": {
     "plantName": "Endivien",
     "latinPlantName": "Cichorium endivia",
     "plantType": 3,
@@ -109,7 +109,7 @@
     "harvestYear": 1,
     "perennial": false
   },
-  {
+  "Estragon": {
     "plantName": "Estragon",
     "latinPlantName": "Artemisia dracunculus",
     "plantType": 2,
@@ -119,7 +119,7 @@
     "harvestYear": 1,
     "perennial": true
   },
-  {
+  "Feldsalat": {
     "plantName": "Feldsalat",
     "latinPlantName": "Valerianella",
     "plantType": 3,
@@ -133,7 +133,7 @@
     "harvestYear": 1,
     "perennial": false
   },
-  {
+  "Fenchel": {
     "plantName": "Fenchel",
     "latinPlantName": "Foeniculum vulgare",
     "plantType": 1,
@@ -143,7 +143,7 @@
     "harvestYear": 1,
     "perennial": false
   },
-  {
+  "Frühlingszwiebel": {
     "plantName": "Frühlingszwiebel",
     "latinPlantName": "Allium fistulosum",
     "plantType": 1,
@@ -153,7 +153,7 @@
     "harvestYear": 1,
     "perennial": false
   },
-  {
+  "Gartenerbsen": {
     "plantName": "Gartenerbsen",
     "latinPlantName": "Pisum sativum",
     "plantType": 1,
@@ -163,7 +163,7 @@
     "harvestYear": 1,
     "perennial": false
   },
-  {
+  "Grünkohl": {
     "plantName": "Grünkohl",
     "latinPlantName": "Brassica oleracea var. sabellica",
     "plantType": 1,
@@ -173,7 +173,7 @@
     "harvestYear": 1,
     "perennial": false
   },
-  {
+  "Kapuzinerkresse": {
     "plantName": "Kapuzinerkresse",
     "latinPlantName": "Tropaeolum",
     "plantType": 2,
@@ -183,7 +183,7 @@
     "harvestYear": 1,
     "perennial": false
   },
-  {
+  "Karotten": {
     "plantName": "Karotten",
     "latinPlantName": "Daucus carota subsp. sativus",
     "plantType": 1,
@@ -193,7 +193,7 @@
     "harvestYear": 1,
     "perennial": false
   },
-  {
+  "Kartoffeln": {
     "plantName": "Kartoffeln",
     "latinPlantName": "Solanum tuberosum",
     "plantType": 1,
@@ -203,7 +203,7 @@
     "harvestYear": 1,
     "perennial": false
   },
-  {
+  "Kerbel": {
     "plantName": "Kerbel",
     "latinPlantName": "Anthriscus",
     "plantType": 2,
@@ -213,7 +213,7 @@
     "harvestYear": 1,
     "perennial": false
   },
-  {
+  "Knoblauch": {
     "plantName": "Knoblauch",
     "latinPlantName": "Allium sativum",
     "plantType": 1,
@@ -223,7 +223,7 @@
     "harvestYear": 1,
     "perennial": false
   },
-  {
+  "Knollensellerie": {
     "plantName": "Knollensellerie",
     "latinPlantName": "Apium graveolens var. rapaceum",
     "plantType": 1,
@@ -233,7 +233,7 @@
     "harvestYear": 1,
     "perennial": false
   },
-  {
+  "Kohlrabi": {
     "plantName": "Kohlrabi",
     "latinPlantName": "Brassica oleracea var. gongylodes",
     "plantType": 1,
@@ -243,7 +243,7 @@
     "harvestYear": 1,
     "perennial": false
   },
-  {
+  "Kopfsalat": {
     "plantName": "Kopfsalat",
     "latinPlantName": "Lactuca sativa var. capitata",
     "plantType": 3,
@@ -253,7 +253,7 @@
     "harvestYear": 1,
     "perennial": false
   },
-  {
+  "Koriander": {
     "plantName": "Koriander",
     "latinPlantName": "Coriandrum sativum",
     "plantType": 2,
@@ -263,7 +263,7 @@
     "harvestYear": 1,
     "perennial": false
   },
-  {
+  "Kümmel": {
     "plantName": "Kümmel",
     "latinPlantName": "Carum carvi",
     "plantType": 2,
@@ -273,7 +273,7 @@
     "harvestYear": 2,
     "perennial": true
   },
-  {
+  "Kürbis": {
     "plantName": "Kürbis",
     "latinPlantName": "Cucurbita",
     "plantType": 1,
@@ -283,7 +283,7 @@
     "harvestYear": 1,
     "perennial": false
   },
-  {
+  "Lauch": {
     "plantName": "Lauch",
     "latinPlantName": "Allium ampeloprasum",
     "plantType": 1,
@@ -293,7 +293,7 @@
     "harvestYear": 1,
     "perennial": false
   },
-  {
+  "Lavendel": {
     "plantName": "Lavendel",
     "latinPlantName": "Lavandula angustifolia",
     "plantType": 2,
@@ -303,7 +303,7 @@
     "harvestYear": 1,
     "perennial": true
   },
-  {
+  "Liebstöckel": {
     "plantName": "Liebstöckel",
     "latinPlantName": "Levisticum officinale",
     "plantType": 2,
@@ -313,7 +313,7 @@
     "harvestYear": 1,
     "perennial": false
   },
-  {
+  "Lollosalat": {
     "plantName": "Lollosalat",
     "latinPlantName": "Lactuca sativa var. crispa",
     "plantType": 3,
@@ -323,7 +323,7 @@
     "harvestYear": 1,
     "perennial": false
   },
-  {
+  "Majoran": {
     "plantName": "Majoran",
     "latinPlantName": "Origanum majorana",
     "plantType": 2,
@@ -333,7 +333,7 @@
     "harvestYear": 1,
     "perennial": false
   },
-  {
+  "Mangold": {
     "plantName": "Mangold",
     "latinPlantName": "Beta vulgaris subsp. vulgaris",
     "plantType": 1,
@@ -343,7 +343,7 @@
     "harvestYear": 1,
     "perennial": false
   },
-  {
+  "Oregano": {
     "plantName": "Oregano",
     "latinPlantName": "Origanum vulgare",
     "plantType": 2,
@@ -353,7 +353,7 @@
     "harvestYear": 1,
     "perennial": false
   },
-  {
+  "Gemüsepaprika": {
     "plantName": "Gemüsepaprika",
     "latinPlantName": "Capsicum annuum",
     "plantType": 1,
@@ -363,7 +363,7 @@
     "harvestYear": 1,
     "perennial": false
   },
-  {
+  "Pastinake": {
     "plantName": "Pastinake",
     "latinPlantName": "Pastinaca sativa",
     "plantType": 1,
@@ -373,7 +373,7 @@
     "harvestYear": 1,
     "perennial": false
   },
-  {
+  "Petersilie": {
     "plantName": "Petersilie",
     "latinPlantName": "Petroselinum crispum",
     "plantType": 2,
@@ -383,7 +383,7 @@
     "harvestYear": 1,
     "perennial": false
   },
-  {
+  "Pfefferminze": {
     "plantName": "Pfefferminze",
     "latinPlantName": "Mentha × piperita",
     "plantType": 2,
@@ -393,7 +393,7 @@
     "harvestYear": 1,
     "perennial": false
   },
-  {
+  "Eichblattsalat": {
     "plantName": "Eichblattsalat",
     "latinPlantName": "Lactuca sativa var. acephala",
     "plantType": 3,
@@ -403,7 +403,7 @@
     "harvestYear": 1,
     "perennial": false
   },
-  {
+  "Radicchio": {
     "plantName": "Radicchio",
     "latinPlantName": "Cichorium intybus var. foliosum",
     "plantType": 3,
@@ -413,7 +413,7 @@
     "harvestYear": 1,
     "perennial": false
   },
-  {
+  "Radieschen": {
     "plantName": "Radieschen",
     "latinPlantName": "Raphanus sativus var. sativus",
     "plantType": 1,
@@ -423,7 +423,7 @@
     "harvestYear": 1,
     "perennial": false
   },
-  {
+  "Römersalat": {
     "plantName": "Römersalat",
     "latinPlantName": "Lactuca sativa var. longifolia",
     "plantType": 3,
@@ -433,7 +433,7 @@
     "harvestYear": 1,
     "perennial": false
   },
-  {
+  "Rosmarin": {
     "plantName": "Rosmarin",
     "latinPlantName": "Salvia rosmarinus",
     "plantType": 2,
@@ -443,7 +443,7 @@
     "harvestYear": 1,
     "perennial": true
   },
-  {
+  "Rote Bete": {
     "plantName": "Rote Bete",
     "latinPlantName": "Beta vulgaris subsp. vulgaris",
     "plantType": 1,
@@ -453,7 +453,7 @@
     "harvestYear": 1,
     "perennial": false
   },
-  {
+  "Rosenkohl": {
     "plantName": "Rosenkohl",
     "latinPlantName": "Brassica oleracea var. gemmifera",
     "plantType": 1,
@@ -463,7 +463,7 @@
     "harvestYear": 1,
     "perennial": false
   },
-  {
+  "Rotkohl": {
     "plantName": "Rotkohl",
     "latinPlantName": "Brassica oleracea convar. capitata var. rubra",
     "plantType": 1,
@@ -473,7 +473,7 @@
     "harvestYear": 1,
     "perennial": false
   },
-  {
+  "Rucola": {
     "plantName": "Rucola",
     "latinPlantName": "Eruca sativa",
     "plantType": 3,
@@ -483,7 +483,7 @@
     "harvestYear": 1,
     "perennial": false
   },
-  {
+  "Salatgurke": {
     "plantName": "Salatgurke",
     "latinPlantName": "Cucumis sativus",
     "plantType": 1,
@@ -493,7 +493,7 @@
     "harvestYear": 1,
     "perennial": false
   },
-  {
+  "Salbei": {
     "plantName": "Salbei",
     "latinPlantName": "Salvia",
     "plantType": 2,
@@ -503,7 +503,7 @@
     "harvestYear": 1,
     "perennial": true
   },
-  {
+  "Schnittlauch": {
     "plantName": "Schnittlauch",
     "latinPlantName": "Allium schoenoprasum",
     "plantType": 2,
@@ -513,7 +513,7 @@
     "harvestYear": 1,
     "perennial": false
   },
-  {
+  "Spargel": {
     "plantName": "Spargel",
     "latinPlantName": "Asparagus",
     "plantType": 1,
@@ -523,7 +523,7 @@
     "harvestYear": 1,
     "perennial": false
   },
-  {
+  "Spinat": {
     "plantName": "Spinat",
     "latinPlantName": "Spinacia oleracea",
     "plantType": 1,
@@ -539,7 +539,7 @@
     "harvestYear": 1,
     "perennial": false
   },
-  {
+  "Thymian": {
     "plantName": "Thymian",
     "latinPlantName": "Thymus vulgaris",
     "plantType": 2,
@@ -549,7 +549,7 @@
     "harvestYear": 1,
     "perennial": true
   },
-  {
+  "Tomate": {
     "plantName": "Tomate",
     "latinPlantName": "Solanum lycopersicum",
     "plantType": 1,
@@ -559,7 +559,7 @@
     "harvestYear": 1,
     "perennial": false
   },
-  {
+  "Zitronenmelisse": {
     "plantName": "Zitronenmelisse",
     "latinPlantName": "Melissa officinalis",
     "plantType": 2,
@@ -569,7 +569,7 @@
     "harvestYear": 1,
     "perennial": true
   },
-  {
+  "Zucchini": {
     "plantName": "Zucchini",
     "latinPlantName": "Cucurbita pepo subsp. pepo convar. giromontiina",
     "plantType": 1,
@@ -579,7 +579,7 @@
     "harvestYear": 1,
     "perennial": false
   },
-  {
+  "Zuckermais": {
     "plantName": "Zuckermais",
     "latinPlantName": "Zea mays Saccharata",
     "plantType": 1,
@@ -589,7 +589,7 @@
     "harvestYear": 1,
     "perennial": false
   },
-  {
+  "Zuckerschoten": {
     "plantName": "Zuckerschoten",
     "latinPlantName": "Pisum sativum subsp. sativum convar. axiphium",
     "plantType": 1,
@@ -599,7 +599,7 @@
     "harvestYear": 1,
     "perennial": false
   },
-  {
+  "Zwiebeln": {
     "plantName": "Zwiebeln",
     "latinPlantName": "Allium cepa",
     "plantType": 1,
@@ -609,4 +609,4 @@
     "harvestYear": 1,
     "perennial": false
   }
-]
+}

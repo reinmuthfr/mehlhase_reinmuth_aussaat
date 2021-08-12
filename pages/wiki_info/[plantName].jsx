@@ -1,7 +1,7 @@
 import Image from 'next/image';
 import Layout from '@/components/Layout';
 
-const entries = require('@/data/data.json');
+//const entries = require('@/data/data.json');
 
 /**
  * getStaticProps funktioniert nicht, da die URLs für die Abfragen an die Wikipedia-Api teilweise
@@ -10,10 +10,14 @@ const entries = require('@/data/data.json');
  */
 
 export async function getServerSideProps({ params }) {
-  let result = {};
-  let latinResult = {};
   const plantName = params.plantName;
   const encodedPlantName = encodeURIComponent(plantName);
+  const curl = `https://plant-calendar-193cd-default-rtdb.europe-west1.firebasedatabase.app/plants_object/${encodedPlantName}.json?print=pretty`;
+  const dbresponse = await fetch(curl);
+  const plant = await dbresponse.json();
+  let result = {};
+  let latinResult = {};
+
   const url = `https://de.wikipedia.org/api/rest_v1/page/summary/${encodedPlantName}`;
   try {
     const response = await fetch(url);
@@ -22,7 +26,6 @@ export async function getServerSideProps({ params }) {
     console.log(error);
   }
 
-  const plant = entries.find((entry) => entry.plantName === plantName);
   const latinPlantName = plant.latinPlantName;
   const encodedLatinPlantName = encodeURIComponent(latinPlantName);
   const latinURL = `https://de.wikipedia.org/api/rest_v1/page/summary/${encodedLatinPlantName}`;
@@ -54,8 +57,9 @@ export default function PlantWiki({ plantName = 'wiki', result }) {
   return (
     <Layout title={plantName}>
       <div dangerouslySetInnerHTML={{ __html: result.extract_html }} />
-      {result.originalimage && (
+      {result.thumbnail && (
         <Image
+          className="wiki-image"
           src={result.originalimage.source}
           alt={plantName}
           width={result.originalimage.width}
