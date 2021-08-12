@@ -3,7 +3,7 @@ import firebase from 'firebase/app';
 import 'firebase/database';
 
 export default function contact() {
-  return <Layout title="Roll your own"></Layout>;
+  return <Layout title="DIY-Kalender"></Layout>;
 }
 
 // For Firebase JS SDK v7.20.0 and later, measurementId is optional
