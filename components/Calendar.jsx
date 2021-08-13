@@ -22,10 +22,11 @@ export default function Calendar({ edit }) {
   const [harvest2, setHarvest2] = useState(false);
   const [plantType, setPlantType] = useState([1, 2, 3]);
   const [userId, setUserId] = useState('');
+  const [fetchUserData, setFetchUserData] = useState(false);
 
   useEffect(() => {
-    fetchData(setPlants, userId);
-  }, [userId]);
+    fetchData(setPlants, userId, fetchUserData);
+  }, [userId, fetchUserData]);
 
   useEffect(() => {
     setFilteredPlants(plants);
@@ -110,17 +111,21 @@ export default function Calendar({ edit }) {
         userId={userId}
       ></DisplayPlants>
       {edit && (
-        <EditPlant setPlants={setPlants} setUserId={setUserId}></EditPlant>
+        <EditPlant
+          userId={userId}
+          setUserId={setUserId}
+          setFetchUserData={setFetchUserData}
+        ></EditPlant>
       )}
     </div>
   );
 }
 
-async function fetchData(setPlants, userId) {
+async function fetchData(setPlants, userId, fetchUserData) {
   // const data = await (await fetch(`/data/data.json`)).json();
   let dataArr = [];
   let data = {};
-  if (!userId) {
+  if (!userId || !fetchUserData) {
     try {
       data = await (
         await fetch(

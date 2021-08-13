@@ -1,5 +1,6 @@
 import firebase from 'firebase/app';
 import 'firebase/database';
+import { useState, useEffect } from 'react';
 
 // For Firebase JS SDK v7.20.0 and later, measurementId is optional
 const firebaseConfig = {
@@ -47,6 +48,44 @@ writeUserPlant(11, {
   return database.ref(`users/${userId}/plants`);
 } */
 
-export default function EditPlant() {
-  return <div>Edit Plant</div>;
+export default function EditPlant({ setFetchUserData, userId, setUserId }) {
+  const [preUserId, setPreUserId] = useState('');
+  const [userExists, setUserExists] = useState(false);
+  useEffect(() => {
+    doesUserExist(userId, setUserExists);
+  }, [userId]);
+
+  useEffect(() => {
+    if (userId && userExists) {
+      setFetchUserData(true);
+    }
+  }, [userId, userExists, setFetchUserData]);
+  return (
+    <div>
+      <input
+        placeholder="Benutzername"
+        onChange={(e) => setPreUserId(e.target.value)}
+      ></input>
+      <button onClick={() => setUserId(preUserId)}>Nutzernamen senden</button>
+    </div>
+  );
+}
+
+async function doesUserExist(userId, setUserExists) {
+  const dbRef = firebase.database().ref();
+  dbRef
+    .child('users')
+    .child(userId)
+    .get()
+    .then((snapshot) => {
+      if (snapshot.exists()) {
+        console.log('erfolg');
+        setUserExists(true);
+      } else {
+        setUserExists(false);
+      }
+    })
+    .catch((error) => {
+      console.error(error);
+    });
 }

@@ -21,7 +21,6 @@ export default function AddPlant({ plants, setPlants }) {
       harvestYear: harvestYear,
       perennial: perennial,
     };
-    console.log('neuePflanze', plant);
     return plant;
   }, [
     plantName,
