@@ -11,6 +11,13 @@ import DisplayPlants from './DisplayPlants';
 import EditPlant from './EditPlant';
 import Filter from './Filter';
 
+/**
+ * Pflanzen sind Objekte, die verschiedenen Pflanzen sind in einem Pflanzen-Objekt zusammengefasst,
+ * das auf der Datenbank liegt, für die Darstellung in DisplayPlants wird das Objekt in einen Array
+ * umgewandelt.
+ * Im Datenbankobjekt ist der key für eine Pflanze jeweils mit ihrem Namen (plantName) identisch.
+ */
+
 export default function Calendar({ edit }) {
   const [plants, setPlants] = useState([]);
   const [filteredPlants, setFilteredPlants] = useState(plants);
@@ -112,6 +119,7 @@ export default function Calendar({ edit }) {
       ></DisplayPlants>
       {edit && (
         <EditPlant
+          plants={plants}
           userId={userId}
           setUserId={setUserId}
           setFetchUserData={setFetchUserData}
@@ -121,8 +129,9 @@ export default function Calendar({ edit }) {
   );
 }
 
+//Holt Pflanzenobjekt von Datenbank, entweder user-Objekt oder default-Objekt
+
 async function fetchData(setPlants, userId, fetchUserData) {
-  // const data = await (await fetch(`/data/data.json`)).json();
   let dataArr = [];
   let data = {};
   if (!userId || !fetchUserData) {
@@ -133,6 +142,7 @@ async function fetchData(setPlants, userId, fetchUserData) {
         )
       ).json();
     } catch (error) {
+      //TODO: echte Fehlerbehandlung, auch unten
       console.log(error);
     }
   } else {

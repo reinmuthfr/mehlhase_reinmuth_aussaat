@@ -1,10 +1,9 @@
 import Image from 'next/image';
 import Layout from '@/components/Layout';
 
-//const entries = require('@/data/data.json');
-
 /**
- * getStaticProps funktioniert auch für die default-plants nicht, da die URLs für die Abfragen an die Wikipedia-Api teilweise
+ * Hier werden Info-Seiten über die Wikimedia-Rest-API erzeugt
+ * getStaticProps funktioniert nicht, wenn die URLs für die Abfragen an die Wikipedia-Api
  * von den Antwort-URLS abweichen;
  * für den jetzigen Ansatz mit query-Übergabe aus Plant-Komponente sowieso getServerSideProps
  */

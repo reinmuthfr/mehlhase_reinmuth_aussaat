@@ -6,6 +6,9 @@ import {
   getHarvestYear,
 } from '@/library/helpers';
 
+//Komponente zum Darstellen von einzelnen Pflanzen in DisplyPlants, bei edit true kommt ein Button
+// zum Löschen dazu
+
 export default function Plant({ plant, index, edit, plants, setPlants }) {
   return (
     <>

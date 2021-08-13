@@ -1,5 +1,5 @@
 import { getSelectValues } from '@/library/helpers';
-
+//Komponente zum Setzen und Anwenden bzw. Zurücksetzen von Filtern für den Pflanzenkalender
 export default function Filter({
   setMonthIndoor,
   setMonthOutdoor,

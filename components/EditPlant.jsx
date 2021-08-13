@@ -2,6 +2,9 @@ import firebase from 'firebase/app';
 import 'firebase/database';
 import { useState, useEffect } from 'react';
 
+//Stellt Verbindung zur Datenbank her, Funktionsweise unten in summary-details erläutert
+//TODO:Nutzerzugriff an Passwort binden
+
 // For Firebase JS SDK v7.20.0 and later, measurementId is optional
 const firebaseConfig = {
   apiKey: 'AIzaSyCQaRqODoztBVgJBmMtXYTFoQk8QphDRTM',
@@ -15,40 +18,23 @@ const firebaseConfig = {
   measurementId: 'G-6D05Q498M8',
 };
 
-//firebase.initializeApp(firebaseConfig);
-
 !firebase.apps.length ? firebase.initializeApp(firebaseConfig) : firebase.app();
 
 const database = firebase.database();
 
-/* function writeUserPlant(userId, plantName, newPlant) {
-  database.ref(`users/${userId}/plants_object`).set({
-    plantName: newPlant,
-  });
-} */
-
-function writeUserPlant(userId, newPlant) {
-  database
-    .ref(`users/${userId}/plants_object/${newPlant.plantName}`)
-    .set(newPlant);
+function writeUserPlants(userId, plants) {
+  if (!userId) {
+    return;
+  }
+  database.ref(`users/${userId}/plants_object`).set(plants);
 }
 
-writeUserPlant(11, {
-  plantName: 'A-Test-Kümmel',
-  latinPlantName: 'Carum carvi',
-  plantType: 2,
-  propagationIndoor: [-1],
-  propagationOutdoor: [4, 5, 6],
-  harvest: [12, 13, 14, 15, 16],
-  harvestYear: 2,
-  perennial: true,
-});
-
-/* function getUserIdPath(userId) {
-  return database.ref(`users/${userId}/plants`);
-} */
-
-export default function EditPlant({ setFetchUserData, userId, setUserId }) {
+export default function EditPlant({
+  setFetchUserData,
+  userId,
+  setUserId,
+  plants,
+}) {
   const [preUserId, setPreUserId] = useState('');
   const [userExists, setUserExists] = useState(false);
   useEffect(() => {
@@ -66,12 +52,38 @@ export default function EditPlant({ setFetchUserData, userId, setUserId }) {
         placeholder="Benutzername"
         onChange={(e) => setPreUserId(e.target.value)}
       ></input>
-      <button onClick={() => setUserId(preUserId)}>Nutzernamen senden</button>
+      <button className="big-button" onClick={() => setUserId(preUserId)}>
+        Nutzernamen senden
+      </button>
+      <button
+        className="big-button"
+        onClick={() => {
+          writeUserPlants(userId, plants);
+        }}
+      >
+        Pflanzenkalender speichern
+      </button>
+      <br></br>
+      <summary>
+        Erst Nutzernamen senden, dann Pflanzenkalender speichern.
+        <details>
+          Der Nutzername wird an eine Datenbank gesendet. Dann wird ein Eintrag
+          angelegt, falls noch keiner existiert, oder der bestehende Eintrag
+          geladen. Mit <em>Pflanzenkalendar speichern</em> wird der aktuelle
+          Kalender unter dem Nutzernamen gespeichert. Ein bestehender Kalender
+          wird überschrieben. Sendet man einen leeren Benutzernamen, wird wieder
+          der Standard-Kalender aus der Datenbank geladen.
+        </details>
+      </summary>
     </div>
   );
 }
 
 async function doesUserExist(userId, setUserExists) {
+  if (!userId) {
+    setUserExists(false);
+    return;
+  }
   const dbRef = firebase.database().ref();
   dbRef
     .child('users')
@@ -79,13 +91,13 @@ async function doesUserExist(userId, setUserExists) {
     .get()
     .then((snapshot) => {
       if (snapshot.exists()) {
-        console.log('erfolg');
         setUserExists(true);
       } else {
         setUserExists(false);
       }
     })
     .catch((error) => {
+      //TODO:echte Fehlerbehandlung
       console.error(error);
     });
 }

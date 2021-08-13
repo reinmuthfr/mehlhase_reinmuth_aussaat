@@ -1,6 +1,9 @@
 import AddPlant from './AddPlant';
 import Plant from './Plant';
 
+//dient auf der Startseite zur Darstellung der Pflanzen, ist edit true kommen Komponenten zum
+// Löschen und Hinzufügen bzw. Überschreiben von Pflanzen hinzu
+
 export default function DisplayPlants({
   filteredPlants,
   plants,
@@ -8,7 +11,6 @@ export default function DisplayPlants({
   setPlants,
   userId,
 }) {
-  // console.log(filteredPlants);
   return (
     <div className="plants-display">
       {filteredPlants.length === 0 && (
@@ -36,11 +38,10 @@ export default function DisplayPlants({
               <th>mehrjährige Pflanze</th>
               <th>Ernte ab 2. Jahr</th>
               <th>Info</th>
-              {edit && <th>Löchen</th>}
+              {edit && <th>Löschen</th>}
             </tr>
           </thead>
           <tbody id="divtbody">
-            {/* <!-- Platz für dynamischen Content --> */}
             {filteredPlants.map((plant, index) => (
               <Plant
                 key={plant.plantName}

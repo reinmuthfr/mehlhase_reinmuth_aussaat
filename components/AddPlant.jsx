@@ -1,5 +1,6 @@
 import { useState, useMemo } from 'react';
-
+//Komponente zum Hinzufügen bzw. Überschreiben von Pflanzen durch Nutzer auf diy-calendar
+// wird in Calendar geladen, wenn edit = true
 export default function AddPlant({ plants, setPlants }) {
   const [plantName, setPlantName] = useState('');
   const [latinPlantName, setLatinPlantName] = useState('');
