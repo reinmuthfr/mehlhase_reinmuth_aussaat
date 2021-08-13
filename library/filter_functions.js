@@ -1,10 +1,12 @@
 export function filterByPropagationIndoor(plants, monthIndoor) {
+  console.log('indoor', plants);
   return plants.filter(({ propagationIndoor }) => {
     return monthIndoor.every((month) => propagationIndoor.includes(month));
   });
 }
 
 export function filterByPropagationOutdoor(plants, monthOutdoor) {
+  console.log(plants);
   return plants.filter(({ propagationOutdoor }) => {
     return monthOutdoor.every((month) => propagationOutdoor.includes(month));
   });

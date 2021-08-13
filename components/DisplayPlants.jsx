@@ -1,6 +1,6 @@
+import AddPlant from './AddPlant';
 import Plant from './Plant';
-//TODO:Titel für Spalte Wikipedia überdenken (wir verlinken ja nicht einfach auf Wikipedia; irgendwo)
-// sollte das aber natürlich stehen
+
 export default function DisplayPlants({
   filteredPlants,
   plants,
@@ -52,6 +52,9 @@ export default function DisplayPlants({
                 userId={userId}
               ></Plant>
             ))}
+            {edit && (
+              <AddPlant plants={plants} setPlants={setPlants}></AddPlant>
+            )}
           </tbody>
         </table>
       )}
