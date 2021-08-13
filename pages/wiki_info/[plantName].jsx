@@ -1,19 +1,21 @@
 import Image from 'next/image';
 import Layout from '@/components/Layout';
 
-const entries = require('@/data/data.json');
-
 /**
- * getStaticProps funktioniert nicht, da die URLs für die Abfragen an die Wikipedia-Api teilweise
- * von den Antwort-URLS abweichen, daher getServerSideProps
- *
+ * Hier werden Info-Seiten über die Wikimedia-Rest-API erzeugt
+ * getStaticProps funktioniert nicht, wenn die URLs für die Abfragen an die Wikipedia-Api
+ * von den Antwort-URLS abweichen;
+ * für den jetzigen Ansatz mit query-Übergabe aus Plant-Komponente sowieso getServerSideProps
  */
 
-export async function getServerSideProps({ params }) {
+export async function getServerSideProps({ params, query }) {
+  // console.log(query);
+  const plantName = params.plantName;
+  const latinPlantName = query.latinName;
+  const encodedPlantName = encodeURIComponent(plantName);
+  const encodedLatinPlantName = encodeURIComponent(latinPlantName);
   let result = {};
   let latinResult = {};
-  const plantName = params.plantName;
-  const encodedPlantName = encodeURIComponent(plantName);
   const url = `https://de.wikipedia.org/api/rest_v1/page/summary/${encodedPlantName}`;
   try {
     const response = await fetch(url);
@@ -22,9 +24,6 @@ export async function getServerSideProps({ params }) {
     console.log(error);
   }
 
-  const plant = entries.find((entry) => entry.plantName === plantName);
-  const latinPlantName = plant.latinPlantName;
-  const encodedLatinPlantName = encodeURIComponent(latinPlantName);
   const latinURL = `https://de.wikipedia.org/api/rest_v1/page/summary/${encodedLatinPlantName}`;
   try {
     const latinResponse = await fetch(latinURL);
@@ -54,8 +53,9 @@ export default function PlantWiki({ plantName = 'wiki', result }) {
   return (
     <Layout title={plantName}>
       <div dangerouslySetInnerHTML={{ __html: result.extract_html }} />
-      {result.originalimage && (
+      {result.thumbnail && (
         <Image
+          className="wiki-image"
           src={result.originalimage.source}
           alt={plantName}
           width={result.originalimage.width}

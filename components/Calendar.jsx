@@ -8,9 +8,17 @@ import {
 } from '@/library/filter_functions';
 import { useState, useEffect, useMemo } from 'react';
 import DisplayPlants from './DisplayPlants';
+import EditPlant from './EditPlant';
 import Filter from './Filter';
 
-export default function Calendar() {
+/**
+ * Pflanzen sind Objekte, die verschiedenen Pflanzen sind in einem Pflanzen-Objekt zusammengefasst,
+ * das auf der Datenbank liegt, für die Darstellung in DisplayPlants wird das Objekt in einen Array
+ * umgewandelt.
+ * Im Datenbankobjekt ist der key für eine Pflanze jeweils mit ihrem Namen (plantName) identisch.
+ */
+
+export default function Calendar({ edit }) {
   const [plants, setPlants] = useState([]);
   const [filteredPlants, setFilteredPlants] = useState(plants);
   const [filterReload, triggerFilterReload] = useState(Date.now());
@@ -20,10 +28,12 @@ export default function Calendar() {
   const [harvest1, setHarvest1] = useState(false);
   const [harvest2, setHarvest2] = useState(false);
   const [plantType, setPlantType] = useState([1, 2, 3]);
+  const [userId, setUserId] = useState('');
+  const [fetchUserData, setFetchUserData] = useState(false);
 
   useEffect(() => {
-    fetchData(setPlants);
-  }, []);
+    fetchData(setPlants, userId, fetchUserData);
+  }, [userId, fetchUserData]);
 
   useEffect(() => {
     setFilteredPlants(plants);
@@ -78,6 +88,7 @@ export default function Calendar() {
       ></Filter>
       <div className="calendar-buttons">
         <button
+          className="big-button"
           id="filterbutton"
           onClick={() => {
             filterAll();
@@ -86,6 +97,7 @@ export default function Calendar() {
           Filter anwenden
         </button>
         <button
+          className="big-button"
           id="resetbutton"
           onClick={() => {
             triggerFilterReload(Date.now());
@@ -96,12 +108,58 @@ export default function Calendar() {
           Filter zurücksetzen
         </button>
       </div>
-      <DisplayPlants filteredPlants={filteredPlants}></DisplayPlants>
+      <DisplayPlants
+        filteredPlants={filteredPlants.filter(
+          (plant) => plant.propagationIndoor && plant.propagationOutdoor
+        )}
+        edit={edit}
+        setPlants={setPlants}
+        plants={plants}
+        userId={userId}
+      ></DisplayPlants>
+      {edit && (
+        <EditPlant
+          plants={plants}
+          userId={userId}
+          setUserId={setUserId}
+          setFetchUserData={setFetchUserData}
+        ></EditPlant>
+      )}
     </div>
   );
 }
 
-async function fetchData(setPlants) {
-  const data = await (await fetch(`/data/data.json`)).json();
-  setPlants(data.sort((a, b) => a.plantName.localeCompare(b.plantName)));
+//Holt Pflanzenobjekt von Datenbank, entweder user-Objekt oder default-Objekt
+
+async function fetchData(setPlants, userId, fetchUserData) {
+  let dataArr = [];
+  let data = {};
+  if (!userId || !fetchUserData) {
+    try {
+      data = await (
+        await fetch(
+          `https://plant-calendar-193cd-default-rtdb.europe-west1.firebasedatabase.app/plants_object.json`
+        )
+      ).json();
+    } catch (error) {
+      //TODO: echte Fehlerbehandlung, auch unten
+      console.log(error);
+    }
+  } else {
+    try {
+      data = await (
+        await fetch(
+          `https://plant-calendar-193cd-default-rtdb.europe-west1.firebasedatabase.app/users/${userId}/plants_object.json`
+        )
+      ).json();
+    } catch (error) {
+      console.log(error);
+    }
+  }
+  for (const key in data) {
+    {
+      dataArr.push(data[key]);
+    }
+  }
+  setPlants(dataArr.sort((a, b) => a.plantName.localeCompare(b.plantName)));
 }

@@ -1,11 +1,10 @@
 import Calendar from '@/components/Calendar';
 import Layout from '../components/Layout';
-
+//Startseite mit nicht-editierbarem default-Kalender
 export default function Home() {
   return (
-    /* Hier die Layout-Komponente aufrufen und ihr den Seiteninhalt als Kinder übergeben */
     <Layout title={'Aussaatkalender'}>
-      <Calendar></Calendar>
+      <Calendar edit={false}></Calendar>
     </Layout>
-  )
+  );
 }

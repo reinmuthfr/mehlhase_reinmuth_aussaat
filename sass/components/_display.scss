@@ -7,9 +7,16 @@
 table {
   border: 1px black solid;
   border-collapse: collapse;
+  margin-right: 20px;
 }
 
 td {
+  min-width: 1.2rem;
+  height: 1.4rem;
+  padding: 0.2rem;
+}
+
+.diy-checkbox {
   min-width: 1.2rem;
   height: 1.4rem;
   padding: 0.2rem;

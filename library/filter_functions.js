@@ -1,3 +1,5 @@
+//Filterfunktionen, um Pflanzen nach den in Filter gesetzten Eigenschaften zu filtern
+
 export function filterByPropagationIndoor(plants, monthIndoor) {
   return plants.filter(({ propagationIndoor }) => {
     return monthIndoor.every((month) => propagationIndoor.includes(month));
