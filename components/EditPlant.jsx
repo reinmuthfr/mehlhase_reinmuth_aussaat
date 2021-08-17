@@ -26,7 +26,11 @@ function writeUserPlants(userId, plants) {
   if (!userId) {
     return;
   }
-  database.ref(`users/${userId}/plants_object`).set(plants);
+  const plantObject = {};
+  for (const plant of plants) {
+    plantObject[`${plant.plantName}`] = plant;
+  }
+  database.ref(`users/${userId}/plants_object`).set(plantObject);
 }
 
 export default function EditPlant({
